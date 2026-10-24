@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-preload>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A24 — Films (rebuild)</title>
+  <meta name="description" content="A local rebuild of a 3D disc gallery film catalog concept.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23111%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%23f2f2f2%22/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Cormorant+SC:wght@500&family=Gilda+Display&family=Inter+Tight:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" data-preloader aria-hidden="true">
+    <p class="preloader__side preloader__side--left paragraph-m">A24 Films</p>
+    <p class="preloader__side preloader__side--right paragraph-m"><span data-preload-year>2015</span></p>
+    <p class="preloader__mark">A24</p>
+  </div>
+
+  <nav class="nav">
+    <ul class="nav__list">
+      <li><a href="#" class="nav__logo" aria-label="Home">A24</a></li>
+      <li class="nav__status" data-nav-status>Projecting <span class="spinner"></span></li>
+      <li class="nav__item"><a href="#" class="nav__link is-current">Films</a></li>
+      <li class="nav__item"><a href="#" class="nav__link is-other">Television</a></li>
+      <li class="nav__item nav__item--dropdown">
+        <button class="nav__link" data-dropdown-toggle aria-expanded="false">
+          Index
+          <svg viewBox="0 0 10 6" class="nav__chev" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        </button>
+        <div class="nav__dropdown" data-dropdown>
+          <ul class="nav__dropdown-list" data-index-list></ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero" data-gallery tabindex="0" aria-roledescription="carousel" aria-label="Film disc gallery"
+             aria-describedby="gallery-help">
+      <h1 class="sr-only">Discover the A24 library of Films</h1>
+      <p id="gallery-help" class="sr-only">Use the left and right arrow keys to browse films. Press Space to flip the disc over.</p>
+      <p class="sr-only" aria-live="polite" aria-atomic="true" data-live></p>
+
+      <div class="hero__canvas" data-canvas></div>
+
+      <div class="hero__ui">
+        <div class="info">
+          <p class="heading-s" data-target="title"></p>
+          <div class="info__rows">
+            <div class="info__row">
+              <p class="subheading-xs">Directed by</p>
+              <p class="paragraph-m" data-target="directors"></p>
+            </div>
+            <div class="info__row">
+              <p class="subheading-xs">Year</p>
+              <p class="paragraph-m" data-target="year"></p>
+            </div>
+            <div class="info__row">
+              <p class="subheading-xs">Starring</p>
+              <p class="paragraph-m" data-target="starring"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews" data-reviews>
+          <div class="review">
+            <div class="review__stars" data-target="stars-0"></div>
+            <p class="subheading-xs" data-target="pub-0"></p>
+            <p class="heading-xs" data-target="quote-0"></p>
+          </div>
+          <div class="review">
+            <div class="review__stars" data-target="stars-1"></div>
+            <p class="subheading-xs" data-target="pub-1"></p>
+            <p class="heading-xs" data-target="quote-1"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
